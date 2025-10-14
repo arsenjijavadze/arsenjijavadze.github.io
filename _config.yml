@@ -1,7 +1,8 @@
 title: "Arsen — Tech Blog"
-description: "Cybernetics, internet infrastructure, DevOps and software development."
-baseurl: ""        # user site: keep empty
+description: "Short notes, how-tos and reflections about DevOps, software, and systems."
+baseurl: ""
 url: "https://arsenjijavadze.github.io"
-theme: minima
 lang: en
+theme: null
+markdown: kramdown
 

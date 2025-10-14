@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <header class="site-header container">
+      <!-- <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1> -->
+      <p class="site-desc">{{ site.description }}</p>
+      {% include nav.html %}
+    </header>
+  
+    <main class="site-main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <p>© {{ site.time | date: "%Y" }} {{ site.title }}</p>
+    </footer>
+  </body>
+</html>
+

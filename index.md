@@ -1,16 +1,30 @@
 ---
-title: "Welcome"
+layout: default
+title: Home
 ---
 
-# Welcome / სალამი ყველას
+# Welcome
 
-This is my tech micro-blog — notes and quick tutorials.
+Hi, I’m **Arsen** — a software engineer exploring development, DevOps, and systems.
 
-- English home → /en/
-- ქართული (ka) home → /ka/
+Here you’ll find short notes, practical how-tos, and reflections about technology, engineering, and continuous learning.
 
-Latest posts:
-{% for post in site.posts limit:5 %}
-- [{{ post.title }}]({{ post.url }}) — {{ post.date | date: "%Y-%m-%d" }}
+---
+
+## Latest posts
+
+<ul class="post-list">
+{% for post in site.posts %}
+  <li class="post-list-item">
+    <a href="{{ post.url | relative_url }}">
+      <strong>{{ post.title }}</strong>
+    </a>
+    <div class="post-excerpt">
+      {{ post.excerpt | strip_html | truncate: 180 }}
+    </div>
+    <div class="post-meta">
+      {{ post.date | date: "%Y-%m-%d" }} • {% if post.tags %}{{ post.tags | join: ", " }}{% endif %}
+    </div>
+  </li>
 {% endfor %}
-
+</ul>
