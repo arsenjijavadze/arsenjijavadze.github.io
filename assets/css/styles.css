@@ -5,11 +5,16 @@
   padding: 0;
 }
 
-/* Theme colors */
-:root {
+/* Theme variables (dark default). Inserted for light/dark theme support */
+:root{
   --bg: #221F1F;
   --text: #fff;
-  --accent: rgb(220, 155, 35);
+  --muted: #aaa;            /* neutral secondary text */
+  --muted-2: #9f9a98;      /* used for post-meta */
+  --accent: rgb(220, 155, 35); /* apricot */
+  --border: rgba(255,255,255,0.04);
+  --container-max: 850px;
+  --font-base: 'Poppins', sans-serif;
 }
 
 /* Body */
@@ -99,4 +104,41 @@ footer {
 .post-list-item a { color: var(--accent); text-decoration: none; font-size:0.95rem; }
 .post-excerpt { color: #dcd7d5; margin-top:6px; }
 .post-meta { color: #9f9a98; font-size:0.9rem; margin-top:6px; }
+
+/* theme toggle button */
+.theme-toggle{
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: .95rem;
+}
+html[data-theme="light"] .theme-toggle { border-color: rgba(0,0,0,0.08); color: var(--text); }
+
+
+/* ---------------------------
+   Light theme overrides (minimal)
+   --------------------------- */
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #6b6b6b;
+  --muted-2: #7a7a7a;
+  --accent: rgb(220,155,35); /* keep accent */
+  --border: rgba(0,0,0,0.06);
+}
+
+/* Small tweaks so elements that used dark backgrounds look OK */
+html[data-theme="light"] body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* links and accents already use var(--accent) */
+html[data-theme="light"] a { color: var(--accent); }
+html[data-theme="light"] footer { color: var(--muted); border-top-color: var(--border); }
+html[data-theme="light"] header .site-desc { color: var(--muted); }
 

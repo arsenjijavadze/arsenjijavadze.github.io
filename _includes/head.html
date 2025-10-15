@@ -2,5 +2,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page.title | default: site.title }}</title>
 <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+<script>
+(function(){
+  try {
+    const key = 'arsen-theme';
+    const saved = localStorage.getItem(key);
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  } catch(e){}
+  window.toggleTheme = function() {
+    const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('arsen-theme', next); } catch(e){}
+  };
+})();
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
