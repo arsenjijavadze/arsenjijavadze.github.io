@@ -80,7 +80,7 @@ main h1, main h2, main h3 {
 
 main p {
   margin: 10px 0;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 /* Footer */
@@ -96,7 +96,7 @@ footer {
 /* post list */
 .post-list { list-style: none; padding: 0; margin: 18px 0; }
 .post-list-item { padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
-.post-list-item a { color: var(--accent); text-decoration: none; font-size:1.05rem; }
+.post-list-item a { color: var(--accent); text-decoration: none; font-size:0.95rem; }
 .post-excerpt { color: #dcd7d5; margin-top:6px; }
 .post-meta { color: #9f9a98; font-size:0.9rem; margin-top:6px; }
 
